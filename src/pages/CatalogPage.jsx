@@ -1,10 +1,11 @@
 import Navigation from "../components/Navigation";
+import TruckCard from "../components/TruckCard";
 
 function CatalogPage() {
   return (
     <>
       <Navigation />
-      <h1>catalog page</h1>
+      <TruckCard />
     </>
   );
 }
