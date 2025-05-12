@@ -1,11 +1,15 @@
+import CatalogMain from "../components/CatalogMain";
+import CatalogSideBar from "../components/CatalogSideBar";
 import Navigation from "../components/Navigation";
-import TruckCard from "../components/TruckCard";
 
 function CatalogPage() {
   return (
     <>
       <Navigation />
-      <TruckCard />
+      <div className="flex gap-[64px] py-[48px] px-[64px]">
+        <CatalogSideBar />
+        <CatalogMain />
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RedButton from "./RedButton";
+import LinkButton from "./LinkButton";
 
 function Hero() {
   return (
@@ -14,7 +14,7 @@ function Hero() {
           </h2>
         </div>
 
-        <RedButton to="/catalog" text="View Now" />
+        <LinkButton to="/catalog" text="View Now" />
       </div>
     </main>
   );
