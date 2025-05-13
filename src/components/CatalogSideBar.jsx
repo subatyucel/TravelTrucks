@@ -1,32 +1,17 @@
 import LocationInput from "../components/LocationInput";
 import FilterBox from "../components/FilterBox";
 import Button from "../components/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { setLoading, setTruckList } from "../redux/truckSlice";
-import axiosInstance from "../utils/axios";
-import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import useFetchAndDispatch from "../hooks/useFetchAndDispatch";
 
 function CatalogSideBar() {
   const filterObj = useSelector((state) => state.filter);
-  const dispatch = useDispatch();
+  const fetchAndDispatch = useFetchAndDispatch();
 
-  async function handleSearch() {
-    const filterStr = Object.entries(filterObj)
-      .map((el) => `${el[0]}=${el[1]}&`)
-      .join("");
-
-    try {
-      dispatch(setLoading(true));
-      const response = await axiosInstance.get(filterStr);
-      const trucks = response.data;
-
-      dispatch(setTruckList(trucks.items));
-    } catch (e) {
-      toast.error(e.message);
-    } finally {
-      dispatch(setLoading(false));
-    }
+  function handleSearch() {
+    fetchAndDispatch(filterObj);
   }
+
   return (
     <aside className="flex flex-col gap-[40px]">
       <div>

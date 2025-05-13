@@ -2,31 +2,18 @@ import { useEffect } from "react";
 import CatalogMain from "../components/CatalogMain";
 import CatalogSideBar from "../components/CatalogSideBar";
 import Navigation from "../components/Navigation";
-import axiosInstance from "../utils/axios";
-import { useDispatch } from "react-redux";
-import { setTruckList, setLoading } from "../redux/truckSlice";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import useFetchAndDispatch from "../hooks/useFetchAndDispatch";
 
 function CatalogPage() {
-  const dispatch = useDispatch();
+  const fetchAndDispatch = useFetchAndDispatch();
 
   useEffect(() => {
-    const fetchTrucks = async () => {
-      try {
-        dispatch(setLoading(true));
-        const response = await axiosInstance.get();
-        const trucks = response.data;
-
-        dispatch(setTruckList(trucks.items));
-      } catch (e) {
-        toast.error(e.message);
-      } finally {
-        dispatch(setLoading(false));
-      }
+    const fetchAndDispatchTrukcs = async () => {
+      await fetchAndDispatch();
     };
-
-    fetchTrucks();
-  }, [dispatch]);
+    fetchAndDispatchTrukcs();
+  }, [fetchAndDispatch]);
 
   return (
     <>
