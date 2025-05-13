@@ -16,7 +16,7 @@ function TrackDetailsPage() {
   const [loading, setLoading] = useState(false);
   const [truck, setTruck] = useState(null);
   const keys = truck ? Object.keys(truck) : [];
-  const [status, setStatus] = useState("comments");
+  const [status, setStatus] = useState("details");
 
   useEffect(() => {
     const fetchTruck = async () => {
