@@ -1,28 +1,28 @@
-function TruckDetailList() {
+function TruckDetailList({ truck }) {
   return (
     <ul className="flex flex-col gap-[16px]">
       <li className="flex justify-between font-medium">
-        Form <span>Panel Truck</span>
+        Form <span>{truck.form[0].toUpperCase() + truck.form.slice(1)}</span>
       </li>
 
       <li className="flex justify-between font-medium">
-        Length <span>Panel Truck</span>
+        Length <span>{truck.length}</span>
       </li>
 
       <li className="flex justify-between font-medium">
-        Width <span>Panel Truck</span>
+        Width <span>{truck.width}</span>
       </li>
 
       <li className="flex justify-between font-medium">
-        Height <span>Panel Truck</span>
+        Height <span>{truck.height}</span>
       </li>
 
       <li className="flex justify-between font-medium">
-        Tank <span>Panel Truck</span>
+        Tank <span>{truck.tank}</span>
       </li>
 
       <li className="flex justify-between font-medium">
-        Consumption <span>Panel Truck</span>
+        Consumption <span>{truck.consumption}</span>
       </li>
     </ul>
   );
