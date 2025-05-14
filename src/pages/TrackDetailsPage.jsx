@@ -5,14 +5,15 @@ import TruckInfo from "../components/TruckInfo";
 import TruckImage from "../components/TruckImage";
 import TruckDetailList from "../components/TruckDetailList";
 import BookForm from "../components/BookForm";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axios";
 import { HashLoader } from "react-spinners";
 import CommentCard from "../components/CommentCard";
 
 function TrackDetailsPage() {
-  const params = useParams();
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [truck, setTruck] = useState(null);
   const keys = truck ? Object.keys(truck) : [];
@@ -22,18 +23,18 @@ function TrackDetailsPage() {
     const fetchTruck = async () => {
       try {
         setLoading(true);
-        const res = await axiosInstance(`/${params.id}`);
+        const res = await axiosInstance(`/${id}`);
         setTruck(res.data);
       } catch (e) {
-        console.log(e);
         toast.error(e.response.data);
+        navigate("/catalog");
       } finally {
         setLoading(false);
       }
     };
 
     fetchTruck();
-  }, [params.id]);
+  }, [id, navigate]);
 
   if (loading || !truck)
     return (

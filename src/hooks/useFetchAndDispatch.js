@@ -14,6 +14,7 @@ function useFetchAndDispatch() {
         const trucks = await fetchTrucks(params);
         dispatch(setTruckList(trucks.items));
       } catch (e) {
+        dispatch(setTruckList([]));
         toast.error(e.message);
       } finally {
         dispatch(setLoading(false));

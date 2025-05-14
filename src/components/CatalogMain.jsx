@@ -17,7 +17,11 @@ function CatalogMain() {
 
       <ul className="flex flex-col gap-[32px]">
         {truckList.length < 1 && !loading ? (
-          <h2>No truck found with this filters</h2>
+          <li>
+            <h2 className="w-[60vw] text-center font-bold text-2xl">
+              No truck found with this filters!
+            </h2>
+          </li>
         ) : (
           truckList.map((truck) => <TruckCard truck={truck} key={truck.id} />)
         )}
