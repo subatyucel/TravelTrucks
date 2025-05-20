@@ -4,7 +4,7 @@ function Button({ text, onClick, cssClass, type }) {
   return (
     <button
       type={type || "submit"}
-      className={`rounded-full px-[40px] py-[16px]  ${cssClass}`}
+      className={`rounded-full px-[40px] py-[16px] cursor-pointer ${cssClass}`}
       onClick={onClick}
     >
       {text}
