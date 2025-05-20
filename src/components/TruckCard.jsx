@@ -45,7 +45,7 @@ function TruckCard({ truck }) {
                 €{truck.price.toFixed(2)}
               </h2>
               <Svg
-                cssClass="size-[24px]"
+                cssClass="size-[24px] cursor-pointer"
                 iconName={`${isFav ? "filled-hearth" : "empty-hearth"}`}
               />
             </div>

@@ -71,7 +71,7 @@ function TrackDetailsPage() {
         <div className="flex gap-[40px]">
           <h3
             onClick={() => setStatus("details")}
-            className={`pb-[24px] ${
+            className={`pb-[24px] cursor-pointer ${
               status === "details" ? "border-[#E44848] border-b-[5px]" : ""
             }`}
           >
@@ -79,7 +79,7 @@ function TrackDetailsPage() {
           </h3>
           <h3
             onClick={() => setStatus("comments")}
-            className={`pb-[24px] ${
+            className={`pb-[24px] cursor-pointer ${
               status === "comments" ? "border-[#E44848] border-b-[5px]" : ""
             }`}
           >
