@@ -25,50 +25,52 @@ function TruckCard({ truck }) {
   }
 
   return (
-    <li className="border border-[#DADDE1] p-[24px]  rounded-lg w-[888px]">
-      <div className="flex  gap-[24px] w-[840px]">
+    <li className="border border-[#DADDE1] p-4 md:p-6  rounded-lg w-full max-w-full   ">
+      <div className="flex flex-col lg:flex-row gap-6 max-w-full w-full ">
         <img
           src={truck.gallery[0].thumb}
           alt=""
-          className="w-[292px] h-[320px] object-cover object-left rounded-lg"
+          className="lg:w-[292px] lg:h-[320px] object-cover object-left rounded-lg"
         />
 
-        <div className="w-full flex flex-col gap-[24px] items-start ">
-          <div className="flex justify-between self-stretch">
-            <h2 className="font-semibold text-2xl">{truck.name}</h2>
+        <div className="flex-1 min-w-0 flex flex-col gap-6 items-start ">
+          <div className="flex justify-between gap-4 w-full">
+            <h2 className="font-semibold  md:text-xl lg:text-2xl truncate min-w-0">
+              {truck.name}
+            </h2>
             <div
-              className="flex items-center gap-[12px]"
+              className="flex items-center gap-3 flex-shrink-0"
               data-id={truck.id}
               onClick={handleFav}
             >
-              <h2 className="font-semibold text-2xl">
+              <h2 className="font-semibold md:text-xl lg:text-2xl">
                 €{truck.price.toFixed(2)}
               </h2>
               <Svg
-                cssClass="size-[24px] cursor-pointer"
+                cssClass="size-4 lg:size-6 cursor-pointer"
                 iconName={`${isFav ? "filled-hearth" : "empty-hearth"}`}
               />
             </div>
           </div>
-          <div className="flex items-center gap-[16px]">
-            <div className="flex items-center gap-[4px]">
-              <Svg cssClass="size-[16px]" iconName="filled-star" />
+          <div className="flex items-center gap-4 w-full justify-between ">
+            <div className="flex items-center gap-1 ">
+              <Svg cssClass="size-3 md:size-4" iconName="filled-star" />
 
-              <p>
+              <p className="text-sm md:text-base">
                 {calculateAvgRating(truck.reviews)}({truck.reviews.length}
                 Reviews)
               </p>
             </div>
 
-            <div className="flex items-center gap-[4px]">
-              <Svg cssClass="size-[16px]" iconName="map" />
-              <p>{truck.location}e</p>
+            <div className="flex items-center gap-1">
+              <Svg cssClass="size-3 md:size-4" iconName="map" />
+              <p className="text-sm md:text-base">{truck.location}</p>
             </div>
           </div>
-          <p className="ellipsis">{truck.description}</p>
+          <p className="truncate min-w-0 w-full">{truck.description}</p>
 
           <div>
-            <ul className="flex flex-wrap gap-[8px]">
+            <ul className="flex flex-wrap gap-2">
               {keys.map((key) =>
                 truck[key] === true ? (
                   <FeatureBox

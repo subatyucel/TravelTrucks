@@ -13,7 +13,7 @@ function CatalogSideBar() {
   }
 
   return (
-    <aside className="flex flex-col gap-5 md:gap-10">
+    <aside className="flex flex-col gap-5 md:gap-10 flex-1/3">
       <div>
         <LocationInput />
       </div>

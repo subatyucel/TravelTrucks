@@ -19,7 +19,7 @@ function CatalogPage() {
     <>
       <Toaster />
       <Navigation />
-      <div className="flex flex-col gap-9 py-6 px-8 md:flex-row md:gap-16 md:py-12 md:px-16">
+      <div className="flex flex-col gap-9 py-6 px-8 xl:flex-row md:gap-16 md:py-12 md:px-16">
         <CatalogSideBar />
         <CatalogMain />
       </div>
