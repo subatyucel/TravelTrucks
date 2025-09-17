@@ -6,7 +6,7 @@ function CatalogMain() {
   const { truckList, loading } = useSelector((state) => state.truck);
 
   return (
-    <main className="bg-red-500 w-full flex-2/3">
+    <main className="w-full min-w-0">
       {loading && (
         <HashLoader
           color="#E44848"
@@ -18,7 +18,7 @@ function CatalogMain() {
       <ul className="flex flex-col gap-4 lg:gap-8">
         {truckList.length < 1 && !loading ? (
           <li>
-            <h2 className="w-[60vw] text-center font-bold text-2xl">
+            <h2 className=" text-center font-bold text-2xl">
               No truck found with this filters!
             </h2>
           </li>

@@ -7,7 +7,7 @@ function Navigation() {
         <NavLink to="/" className="logo">
           <img src="/logo.png" alt="TravelTrucks logo" />
         </NavLink>
-        <ul className="flex gap-2.5 md:gap-8 md:m-auto">
+        <ul className="flex gap-2.5 md:gap-8">
           <li>
             <NavLink
               to="/"
