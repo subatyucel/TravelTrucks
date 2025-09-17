@@ -4,7 +4,7 @@ function LinkButton({ to, text }) {
   return (
     <Link
       to={to}
-      className="rounded-full px-[40px] py-[16px] bg-[#E44848] text-[#FFFF]"
+      className="rounded-full px-4 py-2 md:px-10 md:py-4 bg-[#E44848] text-[#FFFF]"
     >
       {text}
     </Link>
