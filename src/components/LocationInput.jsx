@@ -17,8 +17,8 @@ function LocationInput() {
       <label htmlFor="location" className="text-[#10182899]">
         Location
       </label>
-      <div className="flex gap-[8px] items-center py-[18px] px-[20px] bg-[#F7F7F7] rounded-xl">
-        <Svg cssClass="size-[20px]" iconName="map" />
+      <div className="flex gap-2 items-center py-3 px-3 md:py-4.5 md:px-5 bg-[#F7F7F7] rounded-xl">
+        <Svg cssClass="size-3 md:size-5" iconName="map" />
         <input
           value={value}
           onChange={handleChange}

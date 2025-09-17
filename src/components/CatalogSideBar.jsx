@@ -13,20 +13,20 @@ function CatalogSideBar() {
   }
 
   return (
-    <aside className="flex flex-col gap-[40px]">
+    <aside className="flex flex-col gap-5 md:gap-10">
       <div>
         <LocationInput />
       </div>
-      <div className="flex flex-col gap-[32px]">
+      <div className="flex flex-col gap-2 md:gap-8">
         <h2 className="text-[#10182899]">Filters</h2>
 
         <div>
-          <h3 className="text-[#101828] text-xl font-semibold">
+          <h3 className="text-[#101828] text-lg md:text-xl font-semibold">
             Vehicle equipment
           </h3>
-          <div className="border-b border-[#DADDE1] my-[24px]"></div>
+          <div className="border-b border-[#DADDE1] my-2 md:my-6"></div>
 
-          <ul className="flex flex-wrap gap-[12px]">
+          <ul className="flex flex-wrap gap-1 md:gap-3">
             <FilterBox
               iconName="ac"
               text="AC"
@@ -61,10 +61,12 @@ function CatalogSideBar() {
         </div>
 
         <div>
-          <h3 className="text-[#101828] text-xl font-semibold">Vehicle type</h3>
-          <div className="border-b border-[#DADDE1] my-[24px]"></div>
+          <h3 className="text-[#101828] text-lg md:text-xl font-semibold">
+            Vehicle type
+          </h3>
+          <div className="border-b border-[#DADDE1] my-2 md:my-6"></div>
 
-          <ul className="flex flex-wrap gap-[12px]">
+          <ul className="flex flex-wrap gap-2 md:gap-3">
             <FilterBox
               iconName="van"
               text="Van"
