@@ -49,11 +49,10 @@ function TrackDetailsPage() {
     <>
       <Navigation />
       <Toaster />
-      <div className="flex flex-col gap-[60px] py-[48px] px-[64px] ">
-        <div className="flex flex-col gap-[28px]">
+      <div className="flex flex-col gap-11 md:gap-14.5 py-6 px-8 md:py-12 md:px-16 ">
+        <div className="flex flex-col gap-7">
           <TruckInfo truck={truck} />
-
-          <ul className="flex gap-[48px]">
+          <ul className="flex flex-wrap gap-12 justify-center lg:justify-start">
             {truck.gallery.map((g) => (
               <TruckImage url={g.original} key={g.thumb} alt={truck.name} />
             ))}
@@ -68,28 +67,32 @@ function TrackDetailsPage() {
           <p className="text-[#475467]">{truck.description}</p>
         </div>
 
-        <div className="flex gap-[40px]">
+        <div className="flex gap-10">
           <h3
             onClick={() => setStatus("details")}
-            className={`pb-[24px] cursor-pointer ${
-              status === "details" ? "border-[#E44848] border-b-[5px]" : ""
+            className={`pb-3 md:pb-6 cursor-pointer ${
+              status === "details"
+                ? "border-[#E44848] border-b-3 md:border-b-5"
+                : ""
             }`}
           >
             Features
           </h3>
           <h3
             onClick={() => setStatus("comments")}
-            className={`pb-[24px] cursor-pointer ${
-              status === "comments" ? "border-[#E44848] border-b-[5px]" : ""
+            className={`pb-3 md:pb-6cursor-pointer ${
+              status === "comments"
+                ? "border-[#E44848] border-b-3 md:border-b-5"
+                : ""
             }`}
           >
             Reviews
           </h3>
         </div>
 
-        <div className="flex gap-[40px]">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 ">
           {status === "details" && (
-            <div className="py-[44px] px-[52px] bg-[#F7F7F7] w-[631px] rounded-xl flex flex-col gap-[100px]">
+            <div className="py-5 px-5 md:py-11 md:px-12.5 bg-[#F7F7F7] w-full rounded-xl flex flex-col gap-5">
               <ul className="flex gap-[8px] flex-wrap">
                 {keys.map((key) =>
                   truck[key] === true ? (
@@ -113,7 +116,7 @@ function TrackDetailsPage() {
             </div>
           )}
           {status === "comments" && (
-            <div className="py-[44px] px-[52px] w-[631px] rounded-xl flex flex-col gap-[100px]">
+            <div className="min-w-0 py-5 px-5 md:py-11 md:px-12.5 w-full rounded-xl flex flex-col gap-[100px]">
               <ul className="flex flex-col gap-[44px]">
                 {truck.reviews.map((r) => (
                   <CommentCard key={`${r.comment}`} review={r} />
@@ -122,7 +125,7 @@ function TrackDetailsPage() {
             </div>
           )}
 
-          <div className="border border-[#DADDE1] w-[641px] rounded-xl py-[44px] px-[57px]">
+          <div className="min-w-0 border border-[#DADDE1] w-full rounded-xl py-5 px-5 md:py-11 md:px-14.5">
             <div className="flex flex-col gap-[24px]">
               <div>
                 <h3 className="text-[#101828] font-semibold font-xl">

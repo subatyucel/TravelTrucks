@@ -4,7 +4,7 @@ function TruckImage({ url, alt }) {
       <img
         src={url}
         alt={`${alt} image`}
-        className="w-[292px] h-[312px] object-cover  rounded-lg"
+        className="min-w-0 w-[292px] h-[312px] object-cover  rounded-lg"
       />
     </li>
   );
